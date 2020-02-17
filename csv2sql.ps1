@@ -8,18 +8,19 @@ $table = $null
 #Create a new DataTable
 $table = New-Object System.Data.DataTable
 
-#define the data type for each column in your database
+#define the column name and data type below as the same as in your database table
+#$table.Columns.Add("table_column_name","date_type") | Out-Null
 $table.Columns.Add("column1","int") | Out-Null
 $table.Columns.Add("column2","int") | Out-Null
 $table.Columns.Add("column3","float") | Out-Null
-#$table.Columns.Add("columnX","type") | Out-Null
+
 
 #Now map each item in each row from the csv to the table
 foreach ($item in $data) {
     #define a new row object
     $row = $table.NewRow()
- 
-    #set the properties of each row from the data
+
+    #replace $item.column1...$item.columnX with your CSV column headers.
     $row.column1 = $item.column1
     $row.column2 = $item.column2
     $row.column3 = $item.column3
