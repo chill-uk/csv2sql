@@ -5,7 +5,7 @@ $data = Import-CSV -Delimiter ";" '.\mydata.csv'
 #Clear the table
 $table = $null
 
-#Create the new DataTable
+#Create a new DataTable
 $table = New-Object System.Data.DataTable
 
 #define the data type for each column in your database
