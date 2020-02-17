@@ -13,6 +13,7 @@ $table = New-Object System.Data.DataTable
 $table.Columns.Add("column1","int") | Out-Null
 $table.Columns.Add("column2","int") | Out-Null
 $table.Columns.Add("column3","float") | Out-Null
+$table.Columns.Add("columnX","string") | Out-Null
 
 
 #Now map each item in each row from the csv to the table
@@ -20,11 +21,12 @@ foreach ($item in $data) {
     #define a new row object
     $row = $table.NewRow()
 
+    #replace $row.column1...$row.columnX with the column names defined above.
     #replace $item.column1...$item.columnX with your CSV column headers.
     $row.column1 = $item.column1
     $row.column2 = $item.column2
     $row.column3 = $item.column3
-#   $row.columnX = $item.columnX
+    $row.columnX = $item.columnX
     $table.Rows.Add($row)
     }
 
