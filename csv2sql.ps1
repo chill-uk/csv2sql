@@ -1,5 +1,6 @@
-#Import the CSV to a variable
-$data = Import-CSV -Delimiter ";" '.\mydata.csv'
+#Import the CSV to a variable 
+#Note:- my CSV had a ";" as a delimiter. Yours may be different.
+$data = Import-CSV -Delimiter ";" '.\mydata.csv' 
 
 #Clear the table
 $table = $null
